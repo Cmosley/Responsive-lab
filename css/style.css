@@ -121,7 +121,7 @@ html {
     box-shadow: 0px 4px 2px 1px rgb(17, 17, 17);
   }
 
-    #title {
+    #title, #website {
         display: flex;
         justify-content: center;
         font-size: medium;
@@ -156,7 +156,7 @@ html {
   }
 
 
-@media only screen and (min-width: 768px) {
+@media only screen and (min-width: 850px) {
     body {
         display: grid;
         background-color: #0f5f60;
@@ -202,16 +202,43 @@ html {
     /* top right side */
     #sec-2 {
         display: grid;
+        padding-left: 30px;
+        justify-content: flex-start;
         grid-area: name;
         background-color: #f3f3f3;
         box-shadow: 0px 1px 0px 0px rgb(17, 17, 17);
     }
+        #stars {
+            font-size: medium;
+            display: flex;
+            margin: 0;
+            margin-bottom: -30px;
+            justify-content: flex-start;
+        }
+
+        #skills {
+            font-size: large;
+            display: inline-block;
+            
+        }
+
+        #name {
+            color: #ffffff;
+        }
+
+        #name-wide {
+            font-size: x-large;
+            font-weight: bold;
+        }
 
     /* bottom right side */
     #sec-3 {
-        display: grid;
+        display: flex;
+        text-align: left;
+        justify-content: space-around;
         grid-area: title;
         background-color: #f3f3f3;
+        
         box-shadow: 0px 1px 1px 0px rgb(17, 17, 17);
     }
 
