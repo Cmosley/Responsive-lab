@@ -17,6 +17,8 @@ html {
     font-size: 62.5%
   }
   
+  
+
   body {
     display: grid;
     background-color: #0f5f60;
@@ -25,83 +27,210 @@ html {
       Roboto, Oxygen-Sans, Ubuntu, Cantarell, "Helvetica Neue", sans-serif;
     margin: 0;
     height: 100vh;
-    grid-template-columns: 30% 40% 30%;
+    grid-template-columns: 40% 30% 40%;
     grid-template-rows: repeat(5, 20%);
     grid-template-areas:
         "topwhite topwhite topwhite"
-        "topwhite card topwhite"
-        "middlewhite card middlewhite"
-        "bottomwhite card bottomwhite"
+        "leftwhite card rightwhite"
+        "leftwhite card rightwhite"
+        "leftwhite card rightwhite"
         "bottomwhite bottomwhite bottomwhite";   
   }
 
   main { 
-    grid-area: 2/2/5/3;
+    grid-area: card;
   }
 
   .card {
-    background-color: white;
-    font-size: medium;
-    grid-template-rows: 40% 20% 25% 15% ;
+    display: grid;
+    background-color: #ffffff;
+    grid-template-rows: 60% 20% 25% 20%;
     grid-template-columns: 50% 50%;
-
+    grid-template-areas:
+        "first first"
+        "second second"
+        "third third "
+        "btmleft btmright"; 
   }
 
   #sec-1 {
-    grid-area: 0/1/1/3;
+    display: grid;
+    font-size: xx-large;
+    grid-area: first;
+    box-shadow: 0px 3px 1px 1px rgb(17, 17, 17);
+
   }
+
+    #status {
+        display: flex;
+        color: gray;
+        justify-content: flex-end;
+        margin-right: 1em;
+        font-size: x-small;
+    }
+
+    #img {
+        height: 100px;
+        width: 100px;
+        margin: auto;
+        border-radius: 50%;
+        border-color: #81bb93;
+        border-style: solid;
+        border-width: 3px;
+    }
+  
+    #name {
+        display: flex;
+        justify-content: center;
+        font-size: large;
+        font-weight: bold;
+    }
+
   #sec-2 {
-    grid-area: 1/1/2/3;
+    display: grid;    
+    justify-content: center;
+    align-items: center; 
+    background-color: #f3f3f3;
+    grid-area: second;
+    box-shadow: 0px 3px 1px 1px rgb(17, 17, 17);
   }
+
+    #stars {
+        font-size: medium;
+        margin: 10px auto;
+    }
+    #yellow{
+        color: yellow;
+    }
+    #gray {
+        color: gray;
+    }
+    
+    #job {
+        font-size: medium;
+    }
+
   #sec-3 {
-    grid-area: 2/1/3/3;
+    display: grid;
+    /* height: 80px; */
+    padding: -20;
+    justify-content: center;
+    align-items: center;
+    grid-area: third;
+    background-color: #ffffff;
+    box-shadow: 0px 4px 2px 1px rgb(17, 17, 17);
   }
+
+    #title {
+        display: flex;
+        justify-content: center;
+        font-size: medium;
+        font-weight: bold; 
+      } 
+  
   #sec-4 {
-    grid-area: 3/1/4/3;
-  }
-
-
-  #status {
-    display: flex;
-    justify-content: flex-end;
-    margin-right: 1em;
-    font-size: x-small;
-  }
-
-  #img {
-      display: flex;
-      justify-content: center;
-      height: 20%;
-      width: 20%;
-      border-radius: 50%;
-      border-color: black;
-      border-style: solid;
-      border-width: 2px;
-  }
-
-  #name {
-      display: flex;
-      justify-content: center;
-      font-size: large;
-      font-weight: bold;
-  }
-
-  #job {
-    display: flex;
+    display: grid;
+    /* height: 60px; */
+    font-size:40px;
+    color: white;
     justify-content: center;
     align-items: center;
-    background-color: rgb(139, 137, 137);
-    font-size: small;
-    /* grid-row-start: 2;
-    grid-row-end: 3; */
+    grid-area: btmleft;
+    background-color:#66d087;
+    box-shadow: 0px 2px 2px 0px rgb(17, 17, 17);
   }
 
-  #title {
+  #sec-5 {
+    display: grid;
+    font-size:40px;
+    color: white;
     justify-content: center;
     align-items: center;
-    background-color: rgb(146, 116, 116);
-    font-size: small;
-    grid-row-start: 3;
-    grid-row-end: 4;
+    grid-area: btmright;
+    background-color: #5ebc79;
+    box-shadow: 0px 2px 2px 0px rgb(17, 17, 17);
   }
+
+  #skills {
+      display: none;
+  }
+
+
+@media only screen and (min-width: 768px) {
+    body {
+        display: grid;
+        background-color: #0f5f60;
+      /* Use a system font, if none are available use an available sans-sarif   font */
+        font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI",
+          Roboto, Oxygen-Sans, Ubuntu, Cantarell, "Helvetica Neue", sans-serif;
+        margin: 0;
+        height: 100vh;
+        grid-template-columns: 20% 10% 10% 40% 20%;
+        grid-template-rows: 20% 20% 5% 55%;
+        grid-template-areas:
+            "top top top top top"
+            "left card card card right"
+            "left card card card right"
+            "left bottom bottom bottom bottom";
+      }
+
+    .card {
+        display: grid;
+        background-color: #ffffff;
+        grid-template-rows: 85% 15%;
+        grid-template-columns: 20% 20% 60%;
+        grid-template-areas:
+            "img img name"
+            "phone chat title" 
+        }
+    /* top left  */
+    #sec-1 {
+        display: grid;
+        grid-area: img;
+    }
+        #status {
+            display: flex;
+            justify-content: flex-start;
+            margin-left: 10px;
+        }
+
+        #img {
+            height: 150px;
+            width: 150px;
+        }
+
+    /* top right side */
+    #sec-2 {
+        display: grid;
+        grid-area: name;
+        background-color: #f3f3f3;
+        box-shadow: 0px 1px 0px 0px rgb(17, 17, 17);
+    }
+
+    /* bottom right side */
+    #sec-3 {
+        display: grid;
+        grid-area: title;
+        background-color: #f3f3f3;
+        box-shadow: 0px 1px 1px 0px rgb(17, 17, 17);
+    }
+
+    /* bottom far left */
+    #sec-4 {
+        display: grid;
+        grid-area: phone;
+        box-shadow: 0px 1px 1px 0px rgb(17, 17, 17);
+    }
+
+    /* bottom center */
+    #sec-5 {
+        display: grid;
+        grid-area: chat;
+        box-shadow: 0px 1px 1px 0px rgb(17, 17, 17);
+    }
+
+
+    
+}
+   
 
